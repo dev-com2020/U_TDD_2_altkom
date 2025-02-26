@@ -19,7 +19,8 @@ public class LifecycleTest {
 
     @Disabled("Wyłączyłem bo musiałem!")
     @Test
-    void testTwo(){
+    @DisplayName("Test with display name and special char  \uD83D\uDC80")
+    void testWithDisplayNameAndSpecialChar(){
         System.out.println("TEST 2");
     }
 
