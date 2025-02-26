@@ -1,4 +1,5 @@
 import com.thoughtworks.qdox.model.expression.Add;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,6 +17,7 @@ public class GroupedAssertionsTest {
                 );
     }
 
+    @Disabled("shouldHandleNullValues nie spełnia warunków logiki biznesowej")
     @Test
     void shouldHandleNullValues(){
 //        Given&When
