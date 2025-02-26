@@ -1,10 +1,13 @@
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MyFirstTest {
 
-    @Test
+    @RepeatedTest(value = 3, name = "{displayName} {currentRepetition} / {totalRepetitions}")
+    @DisplayName("To jest test potwierdzający")
     void myFirstTest(){
         String message = "2+2 powinno dać 4";
 //        System.out.println(message);
