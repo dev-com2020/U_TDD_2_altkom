@@ -38,4 +38,16 @@ public class MockitoBasicsTest {
                 .isInstanceOf(IndexOutOfBoundsException.class)
                 .hasMessage("Brak elementu");
     }
+    @Test
+    void shouldMockitoVoidTest(){
+        List<String> mockedList = mock(List.class);
+
+        doNothing().when(mockedList).clear();
+        doThrow(new RuntimeException("Błąd")).when(mockedList).removeFirst();
+        mockedList.clear();
+
+        assertThatThrownBy(mockedList::removeFirst)
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("Błąd");
+    }
 }
