@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 public class MyFirstTest {
 
     @RepeatedTest(value = 3, name = "{displayName} {currentRepetition} / {totalRepetitions}")
