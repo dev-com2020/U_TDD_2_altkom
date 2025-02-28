@@ -1,3 +1,5 @@
+package org.example;
+
 class UserService {
     private final UserRepository userRepository;
 

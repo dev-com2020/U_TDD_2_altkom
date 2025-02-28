@@ -1,3 +1,6 @@
+package org.example;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -11,8 +14,8 @@ public class GroupedAssertionsTest {
         Address address = new Address("John","Kowalski");
 //        Then
         assertAll("address",
-                ()-> assertEquals("John",address.getFirstName()),
-                ()-> assertEquals("Kowalski", address.getLastName())
+                ()-> Assertions.assertEquals("John",address.getFirstName()),
+                ()-> Assertions.assertEquals("Kowalski", address.getLastName())
                 );
     }
 

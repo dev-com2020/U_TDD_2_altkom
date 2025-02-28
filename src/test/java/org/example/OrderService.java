@@ -1,3 +1,5 @@
+package org.example;
+
 public class OrderService {
     private final InventoryService inventoryService;
 

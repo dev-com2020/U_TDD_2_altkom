@@ -1,3 +1,6 @@
+package org.example;
+
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,7 +15,7 @@ public class UserServiceTesst {
 
         UserService userService = new UserService(mockRepository);
 
-        assertThat(userService.getUserName(1)).isEqualTo("Tomek");
+        Assertions.assertThat(userService.getUserName(1)).isEqualTo("Tomek");
 
         verify(mockRepository, times(1)).findUserById(1);
     }

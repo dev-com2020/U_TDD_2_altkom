@@ -1,4 +1,6 @@
-import com.thoughtworks.qdox.model.expression.Add;
+package org.example;
+
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -58,11 +60,11 @@ public class MyAssertTest {
     void shouldHaveCorrectAddress(){
         Address user = new Address("Tomasz","Kowalski");
 
-        assertThat(user)
-                .extracting(Address::getFirstName,Address::getLastName)
+        Assertions.assertThat(user)
+                .extracting(Address::getFirstName, Address::getLastName)
                 .containsExactly("Tomasz","Kowalski");
 
-        assertThat(user.getFirstName()).startsWith("T");
+        Assertions.assertThat(user.getFirstName()).startsWith("T");
     }
 
     @Test

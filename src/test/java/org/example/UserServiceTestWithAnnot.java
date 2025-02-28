@@ -1,9 +1,11 @@
+package org.example;
+
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.pitest.functional.predicate.Or;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
@@ -25,13 +27,13 @@ public class UserServiceTestWithAnnot {
     @Test
     void shouldReturnUserName(){
         when(mockRepository.findUserById(1)).thenReturn("Tomek");
-        assertThat(userService.getUserName(1)).isEqualTo("Tomek");
+        Assertions.assertThat(userService.getUserName(1)).isEqualTo("Tomek");
         verify(mockRepository, times(1)).findUserById(1);
     }
     @Test
     void shouldUseMatchers(){
         when(mockRepository.findUserById(anyInt())).thenReturn("Nieznany user");
-        assertThat(mockRepository.findUserById(999)).isEqualTo("Nieznany user");
+        Assertions.assertThat(mockRepository.findUserById(999)).isEqualTo("Nieznany user");
         verify(mockRepository, times(1)).findUserById(anyInt());
     }
 

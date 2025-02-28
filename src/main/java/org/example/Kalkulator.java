@@ -1,3 +1,5 @@
+package org.example;
+
 public class Kalkulator {
 
     public int dodaj(int i, int i1) {
